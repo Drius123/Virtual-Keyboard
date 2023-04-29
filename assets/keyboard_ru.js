@@ -63,9 +63,9 @@ export default `
     <button class="btn-key" id="Shift-right">Shift</button>
     <button class="btn-key" id="Ctrl-left">Ctrl</button>
     <button class="btn-key" id="">Win</button>
-    <button class="btn-key" id="">Alt</button>
+    <button class="btn-key" id="Alt-left">Alt</button>
     <button class="btn-key" id="Space"></button>
-    <button class="btn-key" id="">Alt</button>
+    <button class="btn-key" id="Alt-right">Alt</button>
     <button class="btn-key" id="Ctrl-right">Ctrl</button>
     <button class="btn-key" id="Left">Left</button>
     <button class="btn-key" id="">Bottom</button>
