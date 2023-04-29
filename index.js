@@ -1,5 +1,6 @@
 /* eslint-disable import/extensions */
-import keyboard from './assets/keyboard.js';
+import keyboardEng from './assets/keyboard_en.js';
+import keyboardRu from './assets/keyboard_ru.js';
 
 // Realize class Virtualkeyboard
 class Virtualkeyboard {
@@ -14,7 +15,7 @@ class Virtualkeyboard {
   }
 
   init() {
-    document.body.insertAdjacentHTML('afterbegin', keyboard);
+    document.body.insertAdjacentHTML('afterbegin', keyboardEng);
   }
 
   addBtn() {
