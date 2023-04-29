@@ -5,6 +5,7 @@ import keyboardRu from './assets/keyboard_ru.js';
 // Realize class Virtualkeyboard
 class Virtualkeyboard {
   constructor() {
+    this.buttonClick = '';
     this.keyNumberBtn = ['`', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '-', '=', 'Backspace'];
     this.keyFirstLineEng = ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\'];
     this.keySecondLineEng = ['CapsLk', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', 'Enter'];
@@ -14,17 +15,40 @@ class Virtualkeyboard {
     this.btn.classList.add('key-btn');
   }
 
-  init() {
-    document.body.insertAdjacentHTML('afterbegin', keyboardEng);
+  static init() {
+    if (localStorage.getItem('lang') === null) {
+      localStorage.setItem('lang', 'en');
+      document.body.innerHTML = keyboardEng;
+    } else if (localStorage.getItem('lang') === 'en') {
+      document.body.innerHTML = keyboardEng;
+    } else {
+      document.body.innerHTML = keyboardRu;
+    }
   }
 
-  addBtn() {
-    this.keyNumberBtn.forEach(item => document.body.children[1].append((this.btn)));
+  static changeLang() {
+    if (localStorage.getItem('lang') === 'en') {
+      localStorage.setItem('lang', 'ru');
+      document.body.innerHTML = keyboardRu;
+    } else {
+      localStorage.setItem('lang', 'en');
+      document.body.innerHTML = keyboardEng;
+    }
   }
 }
 
 const virtKeyboard = new Virtualkeyboard();
 
-virtKeyboard.init();
+Virtualkeyboard.init();
 
-virtKeyboard.addBtn();
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Alt' && virtKeyboard.buttonClick === 'Shift') {
+    Virtualkeyboard.changeLang();
+    virtKeyboard.buttonClick = '';
+  } else if (event.key === 'Shift' && virtKeyboard.buttonClick === 'Alt') {
+    Virtualkeyboard.changeLang();
+    virtKeyboard.buttonClick = '';
+  } else {
+    virtKeyboard.buttonClick = event.key;
+  }
+});
