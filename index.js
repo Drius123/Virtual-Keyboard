@@ -84,6 +84,22 @@ class Virtualkeyboard {
   static addEnterinTextArea() {
     document.querySelector('.textarea').value += '\n';
   }
+
+  static addTopArrow() {
+    document.querySelector('.textarea').value += '⇧';
+  }
+
+  static addBottomArrow() {
+    document.querySelector('.textarea').value += '⇩';
+  }
+
+  static addLeftArrow() {
+    document.querySelector('.textarea').value += '⇦';
+  }
+
+  static addRightArrow() {
+    document.querySelector('.textarea').value += '⇨';
+  }
 }
 
 const virtKeyboard = new Virtualkeyboard();
@@ -125,7 +141,15 @@ keyUp();
 
 document.querySelector('#keyboard').addEventListener('click', (event) => {
   document.querySelector('.textarea').focus();
-  if (event.target.textContent.length < 2) {
+  if (event.target.id === 'Top') {
+    Virtualkeyboard.addTopArrow();
+  } else if (event.target.id === 'Bottom') {
+    Virtualkeyboard.addBottomArrow();
+  } else if (event.target.id === 'Left') {
+    Virtualkeyboard.addLeftArrow();
+  } else if (event.target.id === 'Right') {
+    Virtualkeyboard.addRightArrow();
+  } else if (event.target.textContent.length < 2) {
     Virtualkeyboard.addTextinTextArea(event.target.textContent);
   } else if (event.target.textContent === 'Backspace') {
     Virtualkeyboard.deleteTextinTextArea();
