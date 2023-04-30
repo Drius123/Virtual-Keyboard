@@ -175,6 +175,11 @@ legend {
   transition: 0.3s ease 0s;
 }
 
+.btn-key:active{
+  background: #F1CDB3;
+  transition: 0.3s ease 0s;
+}
+
 .btn-key.active{
   background: #F1CDB3;
   transition: 0.3s ease 0s;

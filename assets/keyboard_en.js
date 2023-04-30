@@ -6,7 +6,7 @@ export default `
 </header>
 <main class="main">
 <section class="section-keyboard">
-  <div class="keyboard">
+  <div class="keyboard" id="keyboard">
     <button class="btn-key" id="">\`</button>
     <button class="btn-key" id="">1</button>
     <button class="btn-key" id="">2</button>

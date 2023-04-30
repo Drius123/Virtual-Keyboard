@@ -9,6 +9,7 @@ class Virtualkeyboard {
     this.changeKeyboard = null;
   }
 
+  // init keyboard
   static init() {
     if (localStorage.getItem('lang') === null) {
       localStorage.setItem('lang', 'en');
@@ -20,6 +21,7 @@ class Virtualkeyboard {
     }
   }
 
+  // realize change language
   static changeLang() {
     if (localStorage.getItem('lang') === 'en') {
       localStorage.setItem('lang', 'ru');
@@ -30,6 +32,7 @@ class Virtualkeyboard {
     }
   }
 
+  // realize effect for buttons when click to keyboard
   static addEffectBtn(key, code) {
     for (let i = 0; i < 63; i += 1) {
       if (key === 'Shift' && code === 'ShiftLeft') {
@@ -51,14 +54,35 @@ class Virtualkeyboard {
         document.querySelector('#CapsLk').classList.add('active');
       } else if (code === 'Space') {
         document.querySelector('#Space').classList.add('active');
+      } else if (code === 'ArrowUp') {
+        document.querySelector('#Top').classList.add('active');
+      } else if (code === 'ArrowDown') {
+        document.querySelector('#Bottom').classList.add('active');
+      } else if (code === 'ArrowRight') {
+        document.querySelector('#Right').classList.add('active');
+      } else if (code === 'ArrowLeft') {
+        document.querySelector('#Left').classList.add('active');
       }
     }
   }
 
+  // realize delete effect when release the button
   static deleteAff() {
     for (let i = 0; i < 63; i += 1) {
       document.body.children[1].children[0].children[0].children[i].classList.remove('active');
     }
+  }
+
+  static addTextinTextArea(text) {
+    document.querySelector('.textarea').value += text;
+  }
+
+  static deleteTextinTextArea() {
+    document.querySelector('.textarea').value = document.querySelector('.textarea').value.slice(0, -1);
+  }
+
+  static addEnterinTextArea() {
+    document.querySelector('.textarea').value += '\n';
   }
 }
 
@@ -68,6 +92,7 @@ Virtualkeyboard.init();
 
 function keyDown() {
   document.addEventListener('keydown', (event) => {
+    document.querySelector('.textarea').focus();
     Virtualkeyboard.addEffectBtn(event.key, event.code);
     if (event.key === 'Alt' && virtKeyboard.buttonClick === 'Shift') {
       virtKeyboard.changeKeyboard = true;
@@ -81,15 +106,30 @@ function keyDown() {
   });
 }
 
+function keyUp() {
+  document.addEventListener('keyup', () => {
+    Virtualkeyboard.deleteAff();
+    if (virtKeyboard.changeKeyboard) {
+      Virtualkeyboard.changeLang();
+      virtKeyboard.changeKeyboard = false;
+    }
+    setTimeout(() => {
+      virtKeyboard.buttonClick = '';
+    }, 300);
+  });
+}
+
 keyDown();
 
-document.addEventListener('keyup', () => {
-  Virtualkeyboard.deleteAff();
-  if (virtKeyboard.changeKeyboard) {
-    Virtualkeyboard.changeLang();
-    virtKeyboard.changeKeyboard = false;
+keyUp();
+
+document.querySelector('#keyboard').addEventListener('click', (event) => {
+  document.querySelector('.textarea').focus();
+  if (event.target.textContent.length < 2) {
+    Virtualkeyboard.addTextinTextArea(event.target.textContent);
+  } else if (event.target.textContent === 'Backspace') {
+    Virtualkeyboard.deleteTextinTextArea();
+  } else if (event.target.textContent === 'Enter') {
+    Virtualkeyboard.addEnterinTextArea();
   }
-  setTimeout(() => {
-    virtKeyboard.buttonClick = '';
-  }, 300);
 });
