@@ -7,62 +7,62 @@ export default `
 <main class="main">
 <section class="section-keyboard">
   <div class="keyboard" id="keyboard">
-    <button class="btn-key" id="">\`</button>
-    <button class="btn-key" id="">1</button>
-    <button class="btn-key" id="">2</button>
-    <button class="btn-key" id="">3</button>
-    <button class="btn-key" id="">4</button>
-    <button class="btn-key" id="">5</button>
-    <button class="btn-key" id="">6</button>
-    <button class="btn-key" id="">7</button>
-    <button class="btn-key" id="">8</button>
-    <button class="btn-key" id="">9</button>
-    <button class="btn-key" id="">0</button>
-    <button class="btn-key" id="">-</button>
-    <button class="btn-key" id="">=</button>
+    <button class="btn-key">\`</button>
+    <button class="btn-key">1</button>
+    <button class="btn-key">2</button>
+    <button class="btn-key">3</button>
+    <button class="btn-key">4</button>
+    <button class="btn-key">5</button>
+    <button class="btn-key">6</button>
+    <button class="btn-key">7</button>
+    <button class="btn-key">8</button>
+    <button class="btn-key">9</button>
+    <button class="btn-key">0</button>
+    <button class="btn-key">-</button>
+    <button class="btn-key">=</button>
     <button class="btn-key" id="Backspace">Backspace</button>
     <button class="btn-key" id="Tab">Tab</button>
-    <button class="btn-key" id="">Q</button>
-    <button class="btn-key" id="">W</button>
-    <button class="btn-key" id="">E</button>
-    <button class="btn-key" id="">R</button>
-    <button class="btn-key" id="">T</button>
-    <button class="btn-key" id="">Y</button>
-    <button class="btn-key" id="">U</button>
-    <button class="btn-key" id="">I</button>
-    <button class="btn-key" id="">O</button>
-    <button class="btn-key" id="">P</button>
-    <button class="btn-key" id="">[</button>
-    <button class="btn-key" id="">]</button>
-    <button class="btn-key" id="">\\</button>
+    <button class="btn-key">Q</button>
+    <button class="btn-key">W</button>
+    <button class="btn-key">E</button>
+    <button class="btn-key">R</button>
+    <button class="btn-key">T</button>
+    <button class="btn-key">Y</button>
+    <button class="btn-key">U</button>
+    <button class="btn-key">I</button>
+    <button class="btn-key">O</button>
+    <button class="btn-key">P</button>
+    <button class="btn-key">[</button>
+    <button class="btn-key">]</button>
+    <button class="btn-key">\\</button>
     <button class="btn-key" id="CapsLk">CapsLk</button>
-    <button class="btn-key" id="">A</button>
-    <button class="btn-key" id="">S</button>
-    <button class="btn-key" id="">D</button>
-    <button class="btn-key" id="">F</button>
-    <button class="btn-key" id="">G</button>
-    <button class="btn-key" id="">H</button>
-    <button class="btn-key" id="">J</button>
-    <button class="btn-key" id="">K</button>
-    <button class="btn-key" id="">L</button>
-    <button class="btn-key" id="">;</button>
-    <button class="btn-key" id="">'</button>
+    <button class="btn-key">A</button>
+    <button class="btn-key">S</button>
+    <button class="btn-key">D</button>
+    <button class="btn-key">F</button>
+    <button class="btn-key">G</button>
+    <button class="btn-key">H</button>
+    <button class="btn-key">J</button>
+    <button class="btn-key">K</button>
+    <button class="btn-key">L</button>
+    <button class="btn-key">;</button>
+    <button class="btn-key">'</button>
     <button class="btn-key" id="Enter">Enter</button>
     <button class="btn-key" id="Shift-left">Shift</button>
-    <button class="btn-key" id="">Z</button>
-    <button class="btn-key" id="">X</button>
-    <button class="btn-key" id="">C</button>
-    <button class="btn-key" id="">V</button>
-    <button class="btn-key" id="">B</button>
-    <button class="btn-key" id="">N</button>
-    <button class="btn-key" id="">M</button>
-    <button class="btn-key" id="">,</button>
-    <button class="btn-key" id="">.</button>
-    <button class="btn-key" id="">/</button>
+    <button class="btn-key">Z</button>
+    <button class="btn-key">X</button>
+    <button class="btn-key">C</button>
+    <button class="btn-key">V</button>
+    <button class="btn-key">B</button>
+    <button class="btn-key">N</button>
+    <button class="btn-key">M</button>
+    <button class="btn-key">,</button>
+    <button class="btn-key">.</button>
+    <button class="btn-key">/</button>
     <button class="btn-key" id="Top"></button>
     <button class="btn-key" id="Shift-right">Shift</button>
     <button class="btn-key" id="Ctrl-left">Ctrl</button>
-    <button class="btn-key" id="">Win</button>
+    <button class="btn-key">Win</button>
     <button class="btn-key" id="Alt-left">Alt</button>
     <button class="btn-key" id="Space"></button>
     <button class="btn-key" id="Alt-right">Alt</button>
