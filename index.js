@@ -6,6 +6,7 @@ import keyboardRu from './assets/keyboard_ru.js';
 class Virtualkeyboard {
   constructor() {
     this.buttonClick = '';
+    this.changeKeyboard = null;
   }
 
   static init() {
@@ -31,8 +32,16 @@ class Virtualkeyboard {
 
   static addEffectBtn(key, code) {
     for (let i = 0; i < 63; i += 1) {
-      if (document.body.children[1].children[0].children[0].children[i].textContent.toUpperCase()
-        === key.toUpperCase()) {
+      if (key === 'Shift' && code === 'ShiftLeft') {
+        document.querySelector('#Shift-left').classList.add('active');
+      } else if (key === 'Shift' && code === 'ShiftRight') {
+        document.querySelector('#Shift-right').classList.add('active');
+      } else if (key === 'Alt' && code === 'AltLeft') {
+        document.querySelector('#Alt-left').classList.add('active');
+      } else if (key === 'Alt' && code === 'AltRight') {
+        document.querySelector('#Alt-right').classList.add('active');
+      } else if (document.body.children[1].children[0].children[0].children[i]
+        .textContent.toUpperCase() === key.toUpperCase()) {
         document.body.children[1].children[0].children[0].children[i].classList.add('active');
       } else if (key === 'Control' && code === 'ControlLeft') {
         document.querySelector('#Ctrl-left').classList.add('active');
@@ -42,10 +51,6 @@ class Virtualkeyboard {
         document.querySelector('#CapsLk').classList.add('active');
       } else if (code === 'Space') {
         document.querySelector('#Space').classList.add('active');
-      } else if (key === 'Alt' && code === 'AltLeft') {
-        document.querySelector('#Alt-left').classList.add('active');
-      } else if (key === 'Alt' && code === 'AltRight') {
-        document.querySelector('#Alt-right').classList.add('active');
       }
     }
   }
@@ -61,19 +66,31 @@ const virtKeyboard = new Virtualkeyboard();
 
 Virtualkeyboard.init();
 
-document.addEventListener('keydown', (event) => {
-  Virtualkeyboard.addEffectBtn(event.key, event.code);
-  if (event.key === 'Alt' && virtKeyboard.buttonClick === 'Shift') {
-    Virtualkeyboard.changeLang();
-    virtKeyboard.buttonClick = '';
-  } else if (event.key === 'Shift' && virtKeyboard.buttonClick === 'Alt') {
-    Virtualkeyboard.changeLang();
-    virtKeyboard.buttonClick = '';
-  } else {
-    virtKeyboard.buttonClick = event.key;
-  }
-});
+function keyDown() {
+  document.addEventListener('keydown', (event) => {
+    console.log(event);
+    Virtualkeyboard.addEffectBtn(event.key, event.code);
+    if (event.key === 'Alt' && virtKeyboard.buttonClick === 'Shift') {
+      virtKeyboard.changeKeyboard = true;
+      virtKeyboard.buttonClick = '';
+    } else if (event.key === 'Shift' && virtKeyboard.buttonClick === 'Alt') {
+      virtKeyboard.changeKeyboard = true;
+      virtKeyboard.buttonClick = '';
+    } else {
+      virtKeyboard.buttonClick = event.key;
+    }
+  });
+}
+
+keyDown();
 
 document.addEventListener('keyup', () => {
   Virtualkeyboard.deleteAff();
+  if (virtKeyboard.changeKeyboard) {
+    Virtualkeyboard.changeLang();
+    virtKeyboard.changeKeyboard = false;
+  }
+  setTimeout(() => {
+    virtKeyboard.buttonClick = '';
+  }, 1000);
 });

@@ -1,7 +1,7 @@
 export default `
 
 <header class="header">
-<h1 class="main-article">Virtual Keyboard. Use to switch language Shift+Alt</h1>
+<h1 class="main-article">Virtual Keyboard. Use to switch language Alt+Shift</h1>
 <textarea class="textarea"></textarea>
 </header>
 <main class="main">

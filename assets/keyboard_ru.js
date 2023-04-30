@@ -1,7 +1,7 @@
 export default `
 
 <header class="header">
-<h1 class="main-article">Виртуальная клавиатура. Для переключения языка используйте Shift+Alt</h1>
+<h1 class="main-article">Виртуальная клавиатура. Для переключения языка используйте Alt+Shift</h1>
 <textarea class="textarea"></textarea>
 </header>
 <main class="main">
