@@ -218,5 +218,91 @@ legend {
 
 #Left,
 #Right {
+  position: relative;
   width: 107px;
+}
+
+#Top,
+#Bottom {
+  position: relative;
+}
+
+#Left::before {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  bottom: 17px;
+  transform: rotate(40deg);
+}
+
+#Left::after {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  right: 42px;
+  bottom: 22px;
+  transform: rotate(-40deg)
+}
+
+#Right::before {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  bottom: 17px;
+  transform: rotate(140deg);
+}
+
+#Right::after {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  right: 42px;
+  bottom: 22px;
+  transform: rotate(-140deg)
+}
+
+#Top::before {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  transform: rotate(45deg);
+}
+
+#Top::after {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  right: 23px;
+  transform: rotate(-45deg)
+}
+
+#Bottom::before {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  transform: rotate(135deg);
+}
+
+#Bottom::after {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 10px;
+  height: 2px;
+  right: 23px;
+  transform: rotate(45deg)
 }

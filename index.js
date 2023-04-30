@@ -68,7 +68,6 @@ Virtualkeyboard.init();
 
 function keyDown() {
   document.addEventListener('keydown', (event) => {
-    console.log(event);
     Virtualkeyboard.addEffectBtn(event.key, event.code);
     if (event.key === 'Alt' && virtKeyboard.buttonClick === 'Shift') {
       virtKeyboard.changeKeyboard = true;
@@ -92,5 +91,5 @@ document.addEventListener('keyup', () => {
   }
   setTimeout(() => {
     virtKeyboard.buttonClick = '';
-  }, 1000);
+  }, 300);
 });
