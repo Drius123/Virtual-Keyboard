@@ -2,24 +2,23 @@ export default `
 
 <header class="header">
 <h1 class="main-article">Virtual Keyboard. Use to switch language Alt+Shift</h1>
-<textarea class="textarea"></textarea>
 </header>
 <main class="main">
 <section class="section-keyboard">
   <div class="keyboard" id="keyboard">
-    <button class="btn-key">\`</button>
-    <button class="btn-key">1</button>
-    <button class="btn-key">2</button>
-    <button class="btn-key">3</button>
-    <button class="btn-key">4</button>
-    <button class="btn-key">5</button>
-    <button class="btn-key">6</button>
-    <button class="btn-key">7</button>
-    <button class="btn-key">8</button>
-    <button class="btn-key">9</button>
-    <button class="btn-key">0</button>
-    <button class="btn-key">-</button>
-    <button class="btn-key">=</button>
+    <button class="btn-key" id="tilde"><pre>~  </pre>\`</button>
+    <button class="btn-key"><pre>!  </pre>1</button>
+    <button class="btn-key"><pre>@  </pre>2</button>
+    <button class="btn-key"><pre>#  </pre>3</button>
+    <button class="btn-key"><pre>$  </pre>4</button>
+    <button class="btn-key"><pre>%  </pre>5</button>
+    <button class="btn-key"><pre>^  </pre>6</button>
+    <button class="btn-key"><pre>&  </pre>7</button>
+    <button class="btn-key"><pre>*  </pre>8</button>
+    <button class="btn-key"><pre>(  </pre>9</button>
+    <button class="btn-key"><pre>)  </pre>0</button>
+    <button class="btn-key"><pre>_  </pre>-</button>
+    <button class="btn-key"><pre>+  </pre>=</button>
     <button class="btn-key" id="Backspace">Backspace</button>
     <button class="btn-key" id="Tab">Tab</button>
     <button class="btn-key">Q</button>
@@ -32,9 +31,9 @@ export default `
     <button class="btn-key">I</button>
     <button class="btn-key">O</button>
     <button class="btn-key">P</button>
-    <button class="btn-key">[</button>
-    <button class="btn-key">]</button>
-    <button class="btn-key">\\</button>
+    <button class="btn-key"><pre>{  </pre>[</button>
+    <button class="btn-key"><pre>}  </pre>]</button>
+    <button class="btn-key"><pre>|  </pre>\\</button>
     <button class="btn-key" id="CapsLk">CapsLk</button>
     <button class="btn-key">A</button>
     <button class="btn-key">S</button>
@@ -62,7 +61,7 @@ export default `
     <button class="btn-key" id="Top"></button>
     <button class="btn-key" id="Shift-right">Shift</button>
     <button class="btn-key" id="Ctrl-left">Ctrl</button>
-    <button class="btn-key">Win</button>
+    <button class="btn-key" id="Win">Win</button>
     <button class="btn-key" id="Alt-left">Alt</button>
     <button class="btn-key" id="Space"></button>
     <button class="btn-key" id="Alt-right">Alt</button>
@@ -73,5 +72,4 @@ export default `
   </div>
 </section>
 </main>
-<script type="module" src="index.js"></script>
 `;
