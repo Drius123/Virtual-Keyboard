@@ -53,9 +53,6 @@ class Virtualkeyboard {
         document.querySelector('#Alt-left').classList.add('active');
       } else if (key === 'Alt' && code === 'AltRight') {
         document.querySelector('#Alt-right').classList.add('active');
-      } else if (document.body.children[2].children[0].children[0].children[i]
-        .textContent.slice(-1).toUpperCase() === key.toUpperCase()) {
-        document.body.children[2].children[0].children[0].children[i].classList.add('active');
       } else if (key === 'Control' && code === 'ControlLeft') {
         document.querySelector('#Ctrl-left').classList.add('active');
       } else if (key === 'Control' && code === 'ControlRight') {
@@ -76,14 +73,23 @@ class Virtualkeyboard {
         document.querySelector('#Win').classList.add('active');
       } else if (key === '`') {
         document.querySelector('#tilde').classList.add('active');
+      } else if (document.body.children[2].children[0].children[0].children[i]
+        .textContent.slice(-1).toUpperCase() === key.slice(-1).toUpperCase()) {
+        document.body.children[2].children[0].children[0].children[i].classList.add('active');
       }
     }
   }
 
   // realize delete effect when release the button
   static deleteAff() {
-    for (let i = 0; i < 63; i += 1) {
-      document.body.children[2].children[0].children[0].children[i].classList.remove('active');
+    if (localStorage.getItem('lang') === 'en') {
+      for (let i = 0; i < 63; i += 1) {
+        document.body.children[2].children[0].children[0].children[i].classList.remove('active');
+      }
+    } else {
+      for (let i = 0; i < 64; i += 1) {
+        document.body.children[2].children[0].children[0].children[i].classList.remove('active');
+      }
     }
   }
 
